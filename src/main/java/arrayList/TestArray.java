@@ -1,6 +1,6 @@
 package arrayList;
 
-public class testArray {
+public class TestArray {
 
     public static void main(String[] args) {
         MyOwnArrayList<String> myArrayList = new MyOwnArrayList<>();
