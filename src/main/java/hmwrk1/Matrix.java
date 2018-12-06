@@ -1,5 +1,9 @@
 package hmwrk1;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
 public class Matrix {
     public static void main(String[] args) {
         int[][] mas = {{1, 2, 3, 4, 5},
@@ -12,6 +16,7 @@ public class Matrix {
         System.out.println("reflected matrix: \n");
         Matrix.reflectMatrix(mas);
         Matrix.printMatrix(mas);
+        Matrix.wtireToFile(mas, "matrix.txt");
 
     }
 
@@ -31,6 +36,20 @@ public class Matrix {
                 System.out.print(mas[i][j] + "\t");
             }
             System.out.println("\n");
+        }
+    }
+
+    public static void wtireToFile(int[][] matrix,String path) {
+        try (FileWriter writer = new FileWriter(path)) {
+            for (int i = 0; i < matrix.length; i++) {
+                String text = Arrays.toString(matrix[i]);
+                writer.append(text.substring(1, text.length() - 1));
+                writer.append('\n');
+            }
+            writer.close();
+            writer.flush();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }
