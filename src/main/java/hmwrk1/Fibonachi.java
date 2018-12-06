@@ -1,20 +1,18 @@
 package hmwrk1;
 
+import java.util.Scanner;
+
 public class Fibonachi {
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i <=  10; i++) {
             System.out.println(fibonachi(i));
         }
     }
 
-    static int fibonachi(int n) {
-
-        if (n == 0)
-            return 0;
-        if (n == 1)
+    public static int fibonachi(int n) {
+        if (n <= 2) {
             return 1;
-        else
-            return fibonachi(n - 1) + fibonachi(n - 2);
-
+        }
+        return fibonachi(n - 1) + fibonachi(n - 2);
     }
 }
