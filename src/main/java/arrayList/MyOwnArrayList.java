@@ -27,11 +27,11 @@ public class MyOwnArrayList<T> implements List<T> {
         return true;
     }
 
-    public boolean add(T obj, int index) {
+    @Override
+    public void add(int index, T element) {
         validateCapacity(size + 1);
-        elementData[index] = obj;
+        elementData[index] = element;
         size++;
-        return true;
     }
 
     public T get(int index) {
@@ -111,11 +111,6 @@ public class MyOwnArrayList<T> implements List<T> {
     @Override
     public T set(int index, T element) {
         return null;
-    }
-
-    @Override
-    public void add(int index, T element) {
-
     }
 
     @Override
