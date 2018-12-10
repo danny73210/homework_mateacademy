@@ -20,6 +20,4 @@ public class MyThread extends Thread {
         }
         System.out.println("[" + sleepMills + " finished" + "]");
     }
-
-
 }

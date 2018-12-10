@@ -17,7 +17,4 @@ public class MainTwo {
         myThread2.start();
         System.out.println("Main method finished!");
     }
-
-
-
 }
