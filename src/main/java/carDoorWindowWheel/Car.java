@@ -27,7 +27,7 @@ public class Car {
         this.DATE_OF_CREATION = date;
     }
 
-    Car(Date date, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int currentSpeed) {
+    Car(Date date, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int newSpeed) {
         this(date);
         this.type = type;
         this.topSpeed = topSpeed;
