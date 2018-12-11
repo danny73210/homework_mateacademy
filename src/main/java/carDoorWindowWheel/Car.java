@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Car {
-    private Date date;
+    private Date creationDate;
     private String type;
     private int topSpeed;
     private float hundredSpeed;
@@ -22,11 +22,11 @@ public class Car {
     private List<Passanger> passangers = new ArrayList<>();
 
     Car(Date date) {
-        this.date = date;
+        this.creationDate = date;
     }
 
-    Car(Date date, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int newSpeed) {
-        this(date);
+    Car(Date creationDate, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int newSpeed) {
+        this(creationDate);
         this.type = type;
         this.topSpeed = topSpeed;
         this.hundredSpeed = hundredSpeed;
@@ -86,7 +86,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "date='" + date + '\'' +
+                "date='" + creationDate + '\'' +
                 ", type='" + type + '\'' +
                 ", topSpeed=" + topSpeed +
                 ", hundredSpeed=" + hundredSpeed +
@@ -96,7 +96,7 @@ public class Car {
     }
 
     public Date getDate() {
-        return date;
+        return creationDate;
     }
 
     public String getType() {
