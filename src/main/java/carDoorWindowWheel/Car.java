@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.List;
 
 public class Car {
-
     private final Date DATE_OF_CREATION;
     private String type;
     private int topSpeed;
@@ -21,7 +20,6 @@ public class Car {
             new CarWheel(), new CarWheel(), new CarWheel(), new CarWheel()));
 
     private List<Passanger> passangers = new ArrayList<>();
-
 
     Car(Date date) {
         this.DATE_OF_CREATION = date;

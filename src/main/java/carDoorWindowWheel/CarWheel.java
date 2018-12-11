@@ -5,7 +5,6 @@ public class CarWheel {
     private final float MAX_CONDITION_OF_TIRE = 1.0f;
     private final float MIN_CONDITION_OF_TIRE = 0.0f;
 
-
     CarWheel() {
         this.tire = MAX_CONDITION_OF_TIRE;
     }
