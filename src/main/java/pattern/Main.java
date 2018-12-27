@@ -2,10 +2,10 @@ package pattern;
 
 public class Main {
     public static void main(String[] args) {
-        CopeProducer copeProducer = new CopeProducer();
-        SuvProducer suvProducer = new SuvProducer();
+        AudiProducer copeProducer = new CopeProducer();
+        AudiProducer suvProducer = new SuvProducer();
 
-        copeProducer.makeAudiModel();
-        suvProducer.makeAudiModel();
+        System.out.println(copeProducer.makeAudiModel().getAudiModel());
+        System.out.println(suvProducer.makeAudiModel().getAudiModel());
     }
 }

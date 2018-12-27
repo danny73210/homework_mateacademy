@@ -1,8 +1,8 @@
 package pattern;
 
-public class CopeProducer implements AudiFactoryProducer {
+public class CopeProducer implements AudiProducer {
     @Override
-    public AudiFactory makeAudiModel() {
+    public Audi makeAudiModel() {
         return new Cope();
     }
 }

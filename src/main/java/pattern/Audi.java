@@ -1,5 +1,5 @@
 package pattern;
 
-public interface AudiFactory {
+public interface Audi {
     String getAudiModel();
 }

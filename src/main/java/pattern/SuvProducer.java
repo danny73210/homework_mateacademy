@@ -1,8 +1,8 @@
 package pattern;
 
-public class SuvProducer implements AudiFactoryProducer {
+public class SuvProducer implements AudiProducer {
     @Override
-    public AudiFactory makeAudiModel() {
+    public Audi makeAudiModel() {
         return new Suv();
     }
 }
