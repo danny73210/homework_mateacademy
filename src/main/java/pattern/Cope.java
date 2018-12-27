@@ -2,7 +2,7 @@ package pattern;
 
 public class Cope implements AudiFactory {
     @Override
-    public void create() {
-        System.out.println("Create Audi-cope model");
+    public String getAudiModel() {
+        return "Audi-cope model";
     }
 }
