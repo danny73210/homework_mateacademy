@@ -2,7 +2,13 @@ package jpa;
 
 import jpa.dao.PatientDao;
 import jpa.dao.PatientDaoImpl;
-import jpa.entity.*;
+import jpa.entity.AccessoryPhotomoter;
+import jpa.entity.AccessoryUltrasonic;
+import jpa.entity.DevicePhotometr;
+import jpa.entity.DeviceUltrasonic;
+import jpa.entity.Patient;
+import jpa.entity.TestBlood;
+import jpa.entity.TestSkin;
 import jpa.service.PatientService;
 import jpa.service.PatientServiceImpl;
 
@@ -13,7 +19,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("persistence");
+        EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("PatientName");
         EntityManager em = emFactory.createEntityManager();
 
         PatientDao patientDao = new PatientDaoImpl(em, Patient.class);
@@ -42,32 +48,31 @@ public class Main {
         patientService.save(patientSkin);
 
         Patient patientBlood = new Patient();
-        patientBlood.setName("PatientForBlood666");
+        patientBlood.setName("PatientForBlood");
 
         AccessoryPhotomoter accessoryPhotomoter = new AccessoryPhotomoter();
         accessoryPhotomoter.setSensivity(77.7);
-        accessoryPhotomoter.setSensor("coolSensor666");
+        accessoryPhotomoter.setSensor("coolSensor");
 
         DevicePhotometr devicePhotometr = new DevicePhotometr();
         devicePhotometr.setManufacturedDate(new Date(427653));
-        devicePhotometr.setName("PhotometrBlood666");
+        devicePhotometr.setName("PhotometrBlood");
         devicePhotometr.setWavelength(200);
         devicePhotometr.setMinimalVolumeOfTest(10.2);
-        devicePhotometr.setDetector("SuperDetectorBlood666");
+        devicePhotometr.setDetector("SuperDetectorBlood");
         devicePhotometr.addAccesory(accessoryPhotomoter);
 
-        TestBlood bloodtest = new TestBlood();
-        bloodtest.addDevice(devicePhotometr);
-        bloodtest.setLaboratoryName("Dnepro");
-        bloodtest.setErythrocyteCount(155.5);
-        bloodtest.setGlucoseLevel(5.5);
-        bloodtest.setHemoglobinumLevel(150);
-        bloodtest.setTestDate(new Date(5355985));
+        TestBlood testBlood = new TestBlood();
+        testBlood.addDevice(devicePhotometr);
+        testBlood.setLaboratoryName("SuperLaboratory");
+        testBlood.setErythrocyteCount(155.5);
+        testBlood.setGlucoseLevel(5.5);
+        testBlood.setHemoglobinumLevel(150);
+        testBlood.setTestDate(new Date(5355985));
 
-        patientBlood.addTest(bloodtest);
+        patientBlood.addTest(testBlood);
         patientService.save(patientBlood);
-
-        System.out.println(bloodtest);
+        System.out.println(testBlood);
         System.out.println(testSkin);
     }
 }

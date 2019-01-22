@@ -10,7 +10,7 @@ public interface Service<T, Id extends Serializable>  {
 
     List<T> finaAll();
 
-    void deleteById(int id);
+    void deleteById(Integer id);
 
     T update(T t);
 

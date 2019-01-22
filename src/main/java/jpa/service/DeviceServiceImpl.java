@@ -28,7 +28,7 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(Integer id) {
 
     }
 
