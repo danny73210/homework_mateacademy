@@ -2,17 +2,17 @@ package carDoorWindowWheel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class Car {
-
-    private final String DATE_OF_CREATION;
+    private Date creationDate;
     private String type;
     private int topSpeed;
     private float hundredSpeed;
     private int amountPas;
     private int pasInCar;
-    private int currentSpeed;
+    private int newSpeed;
 
     private List<CarDoorWindow> carDoorWindows = new ArrayList<>(Arrays.asList(
             new CarDoorWindow(), new CarDoorWindow(), new CarDoorWindow(), new CarDoorWindow()));
@@ -21,24 +21,23 @@ public class Car {
 
     private List<Passanger> passangers = new ArrayList<>();
 
-
-    Car(String date) {
-        this.DATE_OF_CREATION = date;
+    Car(Date date) {
+        this.creationDate = date;
     }
 
-    Car(String date, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int currentSpeed) {
-        this.DATE_OF_CREATION = date;
+    Car(Date creationDate, String type, int topSpeed, float hundredSpeed, int amountPas, int pasInCar, int newSpeed) {
+        this(creationDate);
         this.type = type;
         this.topSpeed = topSpeed;
         this.hundredSpeed = hundredSpeed;
         this.amountPas = amountPas;
         this.pasInCar = pasInCar;
-        this.currentSpeed = currentSpeed;
+        this.newSpeed = newSpeed;
     }
 
-    public void changeSpeed(int currentSpeed) {
-        if (pasInCar <= 0 || carWheels.size() < 4) this.currentSpeed = 0;
-        else this.currentSpeed = currentSpeed;
+    public void changeSpeed(int newSpeed) {
+        if (pasInCar <= 0 || carWheels.size() < 4) this.newSpeed = 0;
+        else this.newSpeed = newSpeed;
     }
 
     public void pasIn(Passanger passanger) {
@@ -57,7 +56,6 @@ public class Car {
         return carDoorWindows.get(index);
     }
 
-    //что означает CarWheel как возвращаемый тип
     public CarWheel getWheel(int index) {
         return carWheels.get(index);
     }
@@ -88,7 +86,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "date='" + DATE_OF_CREATION + '\'' +
+                "date='" + creationDate + '\'' +
                 ", type='" + type + '\'' +
                 ", topSpeed=" + topSpeed +
                 ", hundredSpeed=" + hundredSpeed +
@@ -97,8 +95,8 @@ public class Car {
                 '}';
     }
 
-    public String getDate() {
-        return DATE_OF_CREATION;
+    public Date getDate() {
+        return creationDate;
     }
 
     public String getType() {
